@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>the Financial Math Calculator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<!-- CuFon ends -->
+</head>
+<body>
+
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="index.html">Quant<span>Calc</span> <small>the calculator for all quants</small></a></h1></div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2>About Us</h2><div class="clr"></div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+var id = "beginnerSC";
+var sandbox = "sandbox-stable";
+
+
+function Launch()
+{
+	var repoName = document.isForm.repoName.value;
+	var repoType = document.isForm.repoType.value;
+
+	if (repoType=="Public")
+	{
+		var url = "https://mybinder.org/v2/gh/" 
+			+ id + "/" + sandbox + 
+			"/master?urlpath=git-pull?repo=https://github.com/" 
+			+ id + "/" + repoName + 
+			"%26amp%3Bbranch=master%26amp%3Burlpath=lab/tree/misc?Fautodecode";
+	} 
+	else if (repoType=="Private")
+	{
+		// Private repo needs password to launch
+		// The encreypted token below is from: alert(CryptoJS.AES.encrypt(MY_TOKEN, MY_PASSWORD));
+
+		var password = document.isForm.password.value;	
+		var decrypted = CryptoJS.AES.decrypt("U2FsdGVkX1/3oBBZJXnAVzFm0dbx2aUrpReU1i3v1iSPqgtlaxz+7EqfuIGFu9SQLMepQZnmOd4XZXy0Atp0Qw==", password)
+		var token = decrypted.toString(CryptoJS.enc.Utf8);
+
+		var url = "https://mybinder.org/v2/gh/" 
+			+ id + "/" + sandbox 
+			+ "/master?urlpath=git-pull?repo=https://" 
+			+ token 
+			+ "@github.com/" 
+			+ id + "/" + repoName
+			+ "%26amp%3Bbranch=master%26amp%3Burlpath=lab/tree/" 
+			+ repoName + "?autodecode";
+	}
+	window.open(url, "_self"); 
+}
+
+
+function change(repoType) {
+	if (repoType.value === "Public") {
+		document.isForm.password.disabled = true;
+	} else {
+		document.isForm.password.disabled = false;
+	}
+}
+
+</script>
+
+
+<form name="isForm">
+<p><B>Launch in a Could Workspace</B></p>
+<table border=0>
+<tr>
+<td>Repository type</td>
+<td>	<select name="repoType" size=1 onchange="change(this)">
+	<option value="Private">Private</option>
+	<option value="Public">Public</option>
+	</select>
+</td>
+</tr>
+<tr>
+<td>Repository name</td>
+<td><input name="repoName" value=""></td>
+</tr>
+<tr>
+<td>Github password</td>
+<td><input type="password", name="password" value=""></td>
+</tr>
+</table>						
+<p>
+<input type=button name="go" value="Launch" onClick="Launch();return true;">
+</p>					
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+        <div class="article">
+          <h2><span></span></h2>
+          <div class="clr"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+          <div class="comment"></div>
+        </div>
+        <div class="article">
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1"></div>
+      <div class="col c2"></div>
+      <div class="col c3"></div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+</div>
+<div style="text-align:center">Copyright 2012 Szu-Yu Pai</div>
+</body>
+</html>
